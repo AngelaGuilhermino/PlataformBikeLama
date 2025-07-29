@@ -84,13 +84,6 @@
     height: auto;
 }
 
-@media (max-width: 768px) {
-    .responsive-logo {
-        max-width: 200px;
-    }
-}
-
-
 /* Section 2*/
 .marketing .col-lg-4 {
     text-align: center;

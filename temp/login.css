@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   font-family: Arial, sans-serif;
 }
@@ -42,13 +43,13 @@ body, html {
   margin-top: 30px;
 }
 
-.logo{
-width: 30px;
-height: auto;
-display: flex;
-justify-content: center;
-align-items: center;
-opacity: 0.9;
+.logo {
+  width: 30px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
 }
 
 /* Lado direito */
@@ -64,12 +65,14 @@ opacity: 0.9;
   background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 320px;
+  max-width: 500px;
+  height: 500px;
+  padding-top: 95px;
 }
 
-.form h2 {
+.form h1 {
   color: #166011;
   margin-bottom: 20px;
   text-align: center;
@@ -81,6 +84,7 @@ opacity: 0.9;
   margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  height: 50px;
 }
 
 .form button {
@@ -92,25 +96,104 @@ opacity: 0.9;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  height: 50px;
 }
 
 .form .link {
   display: block;
   text-align: center;
-  margin-top: 10px;
   color: #11c00b;
   text-decoration: none;
-  font-size: 14px;
+  margin-top: 25px;
+  font-size: 18px;
 }
 
 .form .sign-in {
   text-align: center;
   margin-top: 15px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .form .sign-in a {
   color: #166011;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* Logo */
+.responsive-logo {
+  max-width: 400px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-logo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 1095px) {
+  .frase {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .form {
+    max-width: 400px;
+    height: 400px;
+    padding-top: 80px;
+  }
+
+  .frase {
+    display: none;
+  }
+
+  .form input {
+    height: 40px;
+  }
+
+  .form button {
+    height: 40px;
+  }
+
+  .form .link {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .form .sign-in {
+    margin-top: 15px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form {
+    max-width: 300px;
+    height: 300px;
+    padding-top: 43px;
+  }
+
+  .frase {
+    display: none;
+  }
+
+  .form input {
+    height: 30px;
+  }
+
+  .form button {
+    height: 30px;
+  }
+
+  .form .link {
+    margin-top: 17px;
+    font-size: 15px;
+  }
+
+  .form .sign-in {
+    margin-top: 10px;
+    font-size: 15px;
+  }
 }
