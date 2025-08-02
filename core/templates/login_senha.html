@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'style.css' %}">
-    <title>Cadastro</title>
+    <title>Login - Digite a Senha</title>
 </head>
 <body>
     <header style="text-align:center; margin-top:32px;">
@@ -13,13 +13,11 @@
     </header>
     <main>
         <div class="cadastro-container">
-            <h2>Cadastro</h2>
-            <form class="cadastro-form">
-                <input type="text" name="nome" placeholder="Nome completo" required>
-                <input type="email" name="email" placeholder="Email" required>
+            <h2>Digite sua senha</h2>
+            <form method="post" action="{% url 'login' %}" class="cadastro-form">
+                {% csrf_token %}
                 <input type="password" name="senha" placeholder="Senha" required>
-                <input type="password" name="confirmar_senha" placeholder="Confirmar senha" required>
-                <button type="submit">Cadastrar</button>
+                <button type="submit">Entrar</button>
             </form>
         </div>
     </main>

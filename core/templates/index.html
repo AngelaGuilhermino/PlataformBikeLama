@@ -17,7 +17,7 @@
     <!--  MENU -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand mr-auto" href="#">BIKE LAMA</a>
+            <a class="navbar-brand mr-auto" href="{% url 'index' %}">BIKE LAMA</a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -27,7 +27,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active me-3" aria-current="page" href="#">Início</a>
+                            <a class="nav-link active me-3" aria-current="page" href="{% url 'index' %}">Início</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link me-3" href="#">Passeios ciclísticos</a>
@@ -45,7 +45,8 @@
                     </ul>
                 </div>
             </div>
-            <a href="cadastro.html"><button type="button" class="btn btn-login">Login</button></a>
+            {% load static %}
+            <a href="{% url 'login_email' %}"><button type="button" class="btn btn-login">Login</button></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
                 aria-label="Alterna navegação">
