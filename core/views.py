@@ -1,3 +1,8 @@
+def login_email(request):
+    return render(request, 'login_email.html')
+
+def login_senha(request):
+    return render(request, 'login_senha.html')
 from django.shortcuts import render
 
 # Create your views here.
@@ -7,10 +12,6 @@ def index(request):
 
 def perfil(request):
     return render(request, 'perfil.html')
-
-
-def login(request):
-    return render(request, 'login.html')
 
 def cadastro(request):
     return render(request, 'cadastro.html')
