@@ -109,14 +109,12 @@ html {
 }
 
 .form .sign-in {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 18px;
+margin-top: 20px;
+font-size: 16px;
 }
 
 .form .sign-in a {
   color: #166011;
-  text-decoration: none;
   font-weight: bold;
 }
 

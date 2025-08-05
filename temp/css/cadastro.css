@@ -29,13 +29,15 @@ html {
 }
 
 .frase h1 {
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .frase p {
   font-size: 18px;
   max-width: 320px;
+  margin-bottom: 30px;
 }
 
 .frase .logo {
@@ -44,12 +46,14 @@ html {
 }
 
 .logo {
-  width: 30px;
+   width: 100%;
+  max-width: 200px;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0.9;
+
 }
 
 /* Lado direito */
