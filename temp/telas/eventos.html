@@ -7,80 +7,141 @@
     <title>Eventos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/pagsDivulgacoes.css'>
 </head>
 
 <body>
-    <div class="album py-5 bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand mr-auto" href="#">BIKE LAMA</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link me-3" aria-current="page" href="../telas/telaInicial.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-3" href="#">Passeios ciclísticos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-3" href="../telas/calendario.html">Calendário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active me-3" href="../telas/eventos.html">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Equipe</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn btn-login"><a class="btn-login"
+                    href="../telas/login.html">Login</a></button>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
+                aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero-section">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img card-img-top" height="225" preserveAspectRatio="xMidYMid slice"
-                            role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text">Eco Pedal de Canguaretama.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group"> <button type="button"
-                                        class="btn btn-sm btn-outline-secondary">Inscrever-se</button> <button
-                                        type="button" class="btn btn-sm btn-outline-secondary">Ver</button> </div>
+        </div>
+    </section>
+    <section>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col d-flex">
+                        <div class="card shadow-sm h-100"> <img src="../imgs/imgSite3.jpg" alt="ECO PEDAL DE CANGUARETAMA"
+                                class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+
+                            <div class="card-body">
+                                <h4 class="card-text">ECO PEDAL DE CANGUARETAMA</h4>
+                                <p class="card-text">Criado em 2018, o Eco Pedal de Canguaretama reúne anualmente
+                                    centenas
+                                    de ciclistas e oferece a chance de explorar praias paradisíacas, trilhas e rios,
+                                    além de
+                                    vivenciar a rica cultura local.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a href="inscricoes.html">Inscrever-se</a>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a href="#">Ver</a>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img card-img-top" height="225" preserveAspectRatio="xMidYMid slice"
-                            role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text">Mart Bike.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group"> <button type="button"
-                                        class="btn btn-sm btn-outline-secondary">Iscrever-se</button> <button
-                                        type="button" class="btn btn-sm btn-outline-secondary">Ver</button> </div>
+                    <div class="col d-flex">
+                        <div class="card shadow-sm h-100"> <img src="../imgs/imgSite6.jpg" alt="MART BIKE"
+                                class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+                            <div class="card-body">
+                                <h4 class="card-text">MART BIKE</h4>
+                                <p class="card-text descMart">O Mart Bike é um evento da Paróquia de Canguaretama, em
+                                    conjunto
+                                    com a Equipe Bike Lama, em
+                                    homenagem aos Santos Mártires de Cunhaú.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                                href="inscricoes.html">Inscrever-se</a>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                                href="#">Ver</a>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img card-img-top" height="225" preserveAspectRatio="xMidYMid slice"
-                            role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text">Conceição Bike.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group"> <button type="button"
-                                        class="btn btn-sm btn-outline-secondary">Inscrever-se</button> <button
-                                        type="button" class="btn btn-sm btn-outline-secondary">Ver</button> </div>
+                    <div class="col d-flex">
+                        <div class="card shadow-sm h-100"><img src="../imgs/imgSite5.jpg" alt="CONCEIÇÃO BIKE"
+                                class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+                            <div class="card-body">
+                                <h4 class="card-text">CONCEIÇÃO BIKE</h4>
+                                <p class="card-text">O Conceição Bike é um evento da Paróquia de Canguaretama, em
+                                    conjunto
+                                    com a Equipe Bike Lama, em
+                                    homenagem a Nossa Senhora Imaculada Conceição, padroeira da cidade.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                                href="inscricoes.html">Inscrever-se</a></button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a href="#">Ver</a>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <script src="bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
