@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Lado esquerdo */
+.frase {
+  flex: 1;
+  background: linear-gradient(to bottom right, #0a7301, #2ecc71);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.frase h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.frase p {
+  font-size: 18px;
+  max-width: 320px;
+  margin-bottom: 30px;
+}
+
+.frase .logo {
+  font-size: 50px;
+  margin-top: 30px;
+}
+
+.logo {
+   width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+
+}
+
+/* Lado direito */
+.container-box {
+  flex: 1;
+  background-color: #fef7f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  padding-top: 95px;
+}
+
+.form h1 {
+  color: #166011;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #166011;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  height: 50px;
+}
+
+.form .link {
+  display: block;
+  text-align: center;
+  color: #11c00b;
+  text-decoration: none;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.form .sign-in {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.form .sign-in a {
+  color: #166011;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Logo */
+.responsive-logo {
+  max-width: 400px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-logo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 1095px) {
+  .frase {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .form {
+    max-width: 400px;
+    height: 400px;
+    padding-top: 80px;
+  }
+
+  .frase {
+    display: none;
+  }
+
+  .form input {
+    height: 40px;
+  }
+
+  .form button {
+    height: 40px;
+  }
+
+  .form .link {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .form .sign-in {
+    margin-top: 15px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form {
+    max-width: 300px;
+    height: 300px;
+    padding-top: 43px;
+  }
+
+  .frase {
+    display: none;
+  }
+
+  .form input {
+    height: 30px;
+  }
+
+  .form button {
+    height: 30px;
+  }
+
+  .form .link {
+    margin-top: 17px;
+    font-size: 15px;
+  }
+
+  .form .sign-in {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}
