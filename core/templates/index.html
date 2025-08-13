@@ -1,91 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends 'base/base.html' %}
+{% load static %}
+{% block links_add %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'CSS/paginaInicial.css' %}">
+{% endblock %}
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Plataforma Bike Lama</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' media='screen' href="../static/principal.css">
-</head>
-
-<body>
-
-    <!--  MENU -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand mr-auto" href="{% url 'index' %}">BIKE LAMA</a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active me-3" aria-current="page" href="{% url 'index' %}">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-3" href="#">Passeios ciclísticos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-3" href="#">Calendário</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-3" href="#">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Equipe</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            {% load static %}
-            <a href="{% url 'login_email' %}"><button type="button" class="btn btn-login">Login</button></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
-                aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- TESTE SEÇÃO 1 -->
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="../static/img/logoBikeLama.png" class="d-block mx-lg-auto img-fluid" alt="Temas de inicialização"
-                    loading="lazy" width="600" height="500">
-            </div>
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Herói responsivo alinhado à esquerda com imagem</h1>
-                <p class="lead">Projete e personalize rapidamente sites responsivos para dispositivos móveis com
-                    Bootstrap, o kit de ferramentas de código aberto de front-end mais popular do mundo, com variáveis
-                    ​​e mixins Sass, sistema de grade responsivo, extensos componentes pré-construídos e poderosos
-                    plugins JavaScript.</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primário</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Predefinição</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+{% block conteudo %}
+<main>
     <!-- SEÇÃO 1-->
     <section class="hero-section text-white d-flex align-items-center">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
+            <div class="row flex-lg-row-reverse align-items-center">
+                <div class="col-12 col-lg-4 text-center">
+                    <img src="{% static 'img/logoBikeLama.png' %}" class="img-fluid responsive-logo mx-auto"
+                        alt="Logo Bike Lama" loading="lazy">
+                </div>
+
+                <div class="col-12 col-lg-8 text-center text-lg-start mt-4 mt-lg-0">
                     <h1 class="display-4 fw-bold mb-4">Plataforma Digital <br> BIKE LAMA</h1>
-                    <p class="lead mb-4">Acompanhe os eventos, participe dos treinos e viva o ciclismo com os Loucos por
-                        Aventura
+                    <p class="lead mb-4">
+                        Acompanhe os eventos, participe dos treinos e viva o ciclismo com os Loucos por Aventura
                     </p>
-                    <button class="btn btn-light btn-lg px-4 me-2">Tornar-se membro</button>
+                    <button class="btn btn-light btn-lg px-4 me-2"><a href="{% url 'formCadastro' %}" class="btnCadastro">Tornar-se membro</a></button>
                 </div>
             </div>
         </div>
@@ -96,30 +31,27 @@
         <div class="container marketing">
             <div class="row">
                 <div class="col-lg-4">
-                    <img class="rounded-circle" src="../static/img/eventos.png" alt="Generic placeholder image"
+                    <img class="rounded-circle" src="{% static 'img/eventos.png' %}" alt="Generic placeholder image"
                         width="140" height="140">
                     <h2>Eventos</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh
-                        ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                        Praesent commodo cursus magna.</p>
+                    <p>A plataforma divulga eventos da equipe e de parceiros, como a Paróquia de Canguaretama. Além
+                        disso, oferece um formulário de inscrição integrado para facilitar a participação..</p>
                     <p><a class="btn btn-secondary" href="#" role="button">Confira</a></p>
-                </div><!-- /.col-lg-4 -->
+                </div>
                 <div class="col-lg-4">
-                    <img class="rounded-circle" src="../static/img/calendario.png" alt="Generic placeholder image"
+                    <img class="rounded-circle" src="{% static 'img/calendario.png' %}" alt="Generic placeholder image"
                         width="140" height="140">
                     <h2>Calendário</h2>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                        Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
-                        tortor mauris condimentum nibh.</p>
+                    <p>Exibe o calendário anual da equipe com eventos, trilhas e viagens. Auxilia os usuários no
+                        planejamento pessoal para participarem das principais atividades do ano.</p>
                     <p><a class="btn btn-secondary" href="#" role="button">Confira</a></p>
-                </div><!-- /.col-lg-4 -->
+                </div>
                 <div class="col-lg-4">
-                    <img class="rounded-circle" src="../static/img/trilhas.png" alt="Generic placeholder image"
+                    <img class="rounded-circle" src="{% static 'img/trilhas.png' %}" alt="Generic placeholder image"
                         width="140" height="140">
                     <h2>Passeios ciclísticos</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id
-                        ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                        condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <p>Divulga passeios, trilhas e treinos mensais. Os usuários podem confirmar ou cancelar presença,
+                        facilitando o controle de participantes e o planejamento das atividades.</p>
                     <p><a class="btn btn-secondary" href="#" role="button">Confira</a></p>
                 </div>
             </div>
@@ -131,19 +63,16 @@
         <div class="ecopedal p-5 mb-4 rounded-3">
             <div class="ecopedal container-fluid py-5">
                 <div class="row align-items-center">
-                    <!-- Coluna da esquerda: texto -->
                     <div class="col-md-8" style="color: #FFF;">
                         <h1 class="display-5 fw-bold" style="color: #FFF;">ECO PEDAL DE CANGUARETAMA</h1>
                         <p class="fs-4" style="color: #FFF;">
-                            O Eco Pedal de Canguaretama surgiu em 2018. Daí em diante, o evento conta com
-                            centenas de ciclistas inscritos todos os anos.
+                            Criado em 2018, o Eco Pedal de Canguaretama reúne anualmente centenas de ciclistas e oferece
+                            a chance de explorar praias paradisíacas, trilhas e rios, além de vivenciar a rica cultura
+                            local.
                         </p>
                         <button class="btn btn-primary btn-lg" type="button"
-                            style="background-color:#11C00B; border: none;">Inscreva-se</button>
-                    </div>
-                    <!-- Coluna da direita: imagem -->
-                    <div class="col-md-4 text-end">
-
+                            style="background-color:#11C00B; border: none;"><a class="btnEco"
+                                href="{% url 'formInscricoes' %}">Inscrever-se</a></button>
                     </div>
                 </div>
             </div>
@@ -155,72 +84,21 @@
                     <h2>CONCEIÇÃO BIKE</h2>
                     <p>O Conceição Bike é um evento da Paróquia de Canguaretama, em conjunto com a Equipe Bike Lama, em
                         homenagem a Nossa Senhora Imaculada Conceição, padroeira da cidade.</p>
-                    <button class="btn btn-outline-light" type="button">Inscreva-se</button>
+                    <button class="btn btn-outline-light" type="button"><a class="btnBike"
+                            href="{% url 'formInscricoes' %}">Inscrever-se</a></button>
                 </div>
             </div>
 
             <div class="martBike col-md-6">
                 <div class="h-100 p-5 bg-light border rounded-3">
                     <h2>MART BIKE</h2>
-                    <p>O Conceição Bike é um evento da Paróquia de Canguaretama, em conjunto com a Equipe Bike Lama, em
+                    <p>O Mart Bike é um evento da Paróquia de Canguaretama, em conjunto com a Equipe Bike Lama, em
                         homenagem aos Santos Mártires de Cunhaú.</p>
-                    <button class="btn btn-outline-secondary" type="button">Inscreva-se</button>
+                    <button class="btn btn-outline-secondary" type="button"><a class="btnMart"
+                            href="{% url 'formInscricoes' %}">Inscrever-se</a></button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- RODAPÉ -->
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">© 2025 BIKE LAMA.</font>
-            </font>
-        </p>
-
-        <a href="/"
-            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <img class="bi me-2" src="../static/img/logoBikeLama.png" width="45" height="45"></img>
-        </a>
-
-        <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Contatos</font>
-                    </font>
-                </a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Mídias</font>
-                    </font>
-                </a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Preços</font>
-                    </font>
-                </a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Perguntas frequentes</font>
-                    </font>
-                </a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Sobre</font>
-                    </font>
-                </a></li>
-        </ul>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+</main>
+{% endblock %}

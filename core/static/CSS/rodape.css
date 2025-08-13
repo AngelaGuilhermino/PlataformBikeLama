@@ -1,0 +1,60 @@
+
+.rodape {
+    color: #156116;
+    font-weight: 600;
+}
+
+@media (max-width: 1128px) {
+    .img-fluid.responsive-logo.mx-auto {
+        max-width: 350px;
+        height: auto;
+    }
+}
+
+@media (max-width: 1030px) {
+    .img-fluid.responsive-logo.mx-auto {
+        max-width: 330px;
+        height: auto;
+    }
+
+    .display-4.fw-bold.mb-4 {
+        font-size: 2.9rem;
+    }
+
+    .lead.mb-4 {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        padding-bottom: 5rem;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-fluid.responsive-logo.mx-auto {
+        margin-top: 6rem;
+        max-width: 300px;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .img-fluid.responsive-logo.mx-auto {
+        margin-top: 6rem;
+        max-width: 250px;
+        height: auto;
+    }
+
+    .display-4.fw-bold.mb-4 {
+        font-size: 2.3rem;
+    }
+
+    .lead.mb-4 {
+        font-size: 0.9rem;
+    }
+}

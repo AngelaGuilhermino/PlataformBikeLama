@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'CSS/formularios.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="frase">
+            <h1>{% block sloganForm %}
+                {% endblock %}</h1>
+            <p>{% block descForm %}
+                {% endblock %}</p>
+            <div class="logo"><img src="{% static 'img/logoBikeLama.png' %}" alt="logoBikeLama"
+                    style="max-width: 400px; height: auto;">
+            </div>
+        </div>
+        <div class="container-box">
+            <div class="form">
+                <h1>{% block titleForm %}
+                    {% endblock %}</h1>
+                <form>
+                    {% block Form %}
+                    {% endblock %}
+                </form>
+                <a href="#" class="link">Esqueceu a senha?</a>
+                <p class="sign-in">{% block navForm %}{% endblock %}</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

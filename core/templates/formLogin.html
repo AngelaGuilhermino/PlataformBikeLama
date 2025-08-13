@@ -1,0 +1,19 @@
+{% extends 'base/baseForm.html' %}
+{% load static %}
+{% block title %}Login- Bike Lama{% endblock %}
+
+{% block sloganForm %}Bem-vindo <br> de volta!{% endblock %}
+
+{% block descForm %}
+Entre na sua conta e continue vivendo novas aventuras sobre a bike.
+{% endblock %}
+
+{% block titleForm %}Sign In{% endblock %}
+
+{% block Form %}
+<input type="email" placeholder="E-mail" required>
+<input type="password" placeholder="Senha" required>
+<button type="submit">Entrar</button>
+{% endblock %}
+
+{% block navForm %}Ainda não possui cadastro? <a href="{% url 'formCadastro' %}">Sign Up</a>{% endblock %}

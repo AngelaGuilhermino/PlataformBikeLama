@@ -1,5 +1,5 @@
 """
-URL configuration for PlataformBikeLama project.
+URL configuration for site05 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -16,22 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import *
+from core.views import calendario, eventos, passeios, formCadastro, formInscricoes, formLogin, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('perfil/', perfil, name='perfil'),
-<<<<<<< HEAD
-    path('cadastro/', cadastro, name='cadastro')
-    ,path('login_email/', login_email, name='login_email')
-    ,path('login_senha/', login_senha, name='login_senha')
-=======
-    path('login/', login, name='login'),
-    path('cadastro/', cadastro, name='cadastro'),
     path('calendario/', calendario, name='calendario'),
-    path('inscricoes/', inscricoes, name='inscricoes'),
-    path('telainicial/', telainicial, name='telainicial'),
-    path('eventos/', eventos, name='eventos')
->>>>>>> de219c32149c8d6b6648cad325efccdf12593e63
+    path('eventos/', eventos, name='eventos'),
+    path('passeios/', passeios, name='passeios'),
+    path('formCadastro/', formCadastro, name='formCadastro'),
+    path('formInscricoes/', formInscricoes, name='formInscricoes'),
+    path('formLogin/', formLogin, name='formLogin'),
 ]

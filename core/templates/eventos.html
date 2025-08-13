@@ -1,0 +1,88 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Eventos - Bike Lama{% endblock %}
+{% block links_add %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'CSS/divulgacao.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+<section class="hero-section">
+    <div class="container">
+    </div>
+</section>
+<section>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col d-flex">
+                    <div class="card shadow-sm h-100"> <img src="{% static 'img/imgSite3.jpg' %}" alt="ECO PEDAL DE CANGUARETAMA"
+                            class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+
+                        <div class="card-body">
+                            <h4 class="card-text">ECO PEDAL DE CANGUARETAMA</h4>
+                            <p class="card-text">Criado em 2018, o Eco Pedal de Canguaretama reúne anualmente
+                                centenas
+                                de ciclistas e oferece a chance de explorar praias paradisíacas, trilhas e rios,
+                                além de
+                                vivenciar a rica cultura local.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        <a href="{% url 'formInscricoes' %}">Inscrever-se</a>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        <a href="#">Ver</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card shadow-sm h-100"> <img src="{% static 'img/imgSite6.jpg' %}" alt="MART BIKE"
+                            class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+                        <div class="card-body">
+                            <h4 class="card-text">MART BIKE</h4>
+                            <p class="card-text descMart">O Mart Bike é um evento da Paróquia de Canguaretama, em
+                                conjunto
+                                com a Equipe Bike Lama, em
+                                homenagem aos Santos Mártires de Cunhaú.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                            href="{% url 'formInscricoes' %}">Inscrever-se</a>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">Ver</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card shadow-sm h-100"><img src="{% static 'img/imgSite5.jpg' %}" alt="CONCEIÇÃO BIKE"
+                            class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+                        <div class="card-body">
+                            <h4 class="card-text">CONCEIÇÃO BIKE</h4>
+                            <p class="card-text">O Conceição Bike é um evento da Paróquia de Canguaretama, em
+                                conjunto
+                                com a Equipe Bike Lama, em
+                                homenagem a Nossa Senhora Imaculada Conceição, padroeira da cidade.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                            href="{% url 'formInscricoes' %}">Inscrever-se</a></button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        <a href="#">Ver</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

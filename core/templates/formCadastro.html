@@ -1,0 +1,21 @@
+{% extends 'base/baseForm.html' %}
+{% load static%}
+{% block title %}Cadastro - Bike Lama{% endblock %}
+
+{% block sloganForm %}Junte-se ao<br> Bike Lama{% endblock %}
+
+{% block descForm %}
+Faça parte da comunidade que respira aventura e compartilha hitórias sobre duas rodas.
+{% endblock %}
+
+{% block titleForm %}Sign Up{% endblock %}
+
+{% block Form %}
+<input type="name" placeholder="Nome completo" required>
+<input type="email" placeholder="E-mail" required>
+<input type="password" placeholder="Senha" required>
+<input type="password" placeholder="Confirme a senha" required>
+<button type="submit">Cadastrar</button>
+{% endblock %}
+
+{% block navForm %}Já faz parte da equipe? <a href="{% url 'formLogin' %}">Sign In</a>{% endblock %}
