@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% block title %}Eventos (CRUD) - Bike Lama{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <h1>Eventos</h1>
+  <p><a class="btn btn-primary" href="{% url 'evento_create' %}">Novo evento</a></p>
+  <ul class="list-group">
+    {% for evento in eventos %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>{{ evento.nome_evento }}</strong> — {{ evento.data_evento }} — R$ {{ evento.valor_inscricao }}
+        </div>
+        <div>
+          <a class="btn btn-sm btn-outline-primary me-1" href="{% url 'evento_detail' evento.pk %}">Ver</a>
+          <a class="btn btn-sm btn-outline-secondary me-1" href="{% url 'evento_update' evento.pk %}">Editar</a>
+          <a class="btn btn-sm btn-outline-danger" href="{% url 'evento_delete' evento.pk %}">Excluir</a>
+        </div>
+      </li>
+    {% empty %}
+      <li class="list-group-item">Nenhum evento cadastrado.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

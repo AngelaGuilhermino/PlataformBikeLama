@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block title %}Detalhes do Evento{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <h1>{{ evento.nome_evento }}</h1>
+  <p><strong>Data:</strong> {{ evento.data_evento }}</p>
+  <p><strong>Valor:</strong> R$ {{ evento.valor_inscricao }}</p>
+  <p><strong>Distância:</strong> {{ evento.distancia }} km</p>
+  <p><strong>Período inscrições:</strong> {{ evento.data_inicio_inscricao }} — {{ evento.data_fim_inscricao }}</p>
+  <p><strong>Tipo:</strong> {{ evento.tipoEvento }}</p>
+  <a class="btn btn-secondary" href="{% url 'evento_list' %}">Voltar</a>
+  {% if request.user.is_staff %}
+    <a class="btn btn-outline-secondary" href="{% url 'evento_update' evento.pk %}">Editar</a>
+    <a class="btn btn-outline-danger" href="{% url 'evento_delete' evento.pk %}">Excluir</a>
+  {% endif %}
+</div>
+{% endblock %}
