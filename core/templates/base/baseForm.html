@@ -25,7 +25,8 @@
             <div class="form">
                 <h1>{% block titleForm %}
                     {% endblock %}</h1>
-                <form>
+                <form method="post">
+                    {% csrf_token %}
                     {% block Form %}
                     {% endblock %}
                 </form>

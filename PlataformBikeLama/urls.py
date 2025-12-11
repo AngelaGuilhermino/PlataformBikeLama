@@ -16,17 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import calendario, eventos, passeios, formCadastro, formInscricoes, formLogin, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('calendario/', calendario, name='calendario'),
-    path('eventos/', eventos, name='eventos'),
-    path('passeios/', passeios, name='passeios'),
-    path('formCadastro/', formCadastro, name='formCadastro'),
-    path('formInscricoes/', formInscricoes, name='formInscricoes'),
-    path('formLogin/', formLogin, name='formLogin'),
-    # CRUD for Evento (generic views)
-    path('eventos_crud/', include('core.urls')),
+    path('', include('core.urls')),
+    
+    #path('eventos_crud/', include('core.urls')),
 ]

@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
 ]
+AUTH_USER_MODEL = 'core.Ciclista'
+
+
 
 MIDDLEWARE = [
     'core.middleware.AdminLoginNextMiddleware',

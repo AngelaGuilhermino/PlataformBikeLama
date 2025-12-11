@@ -11,11 +11,21 @@ Faça parte da comunidade que respira aventura e compartilha hitórias sobre dua
 {% block titleForm %}Sign Up{% endblock %}
 
 {% block Form %}
-<input type="name" placeholder="Nome completo" required>
-<input type="email" placeholder="E-mail" required>
-<input type="password" placeholder="Senha" required>
-<input type="password" placeholder="Confirme a senha" required>
+<input type="text" name="nome" placeholder="Nome completo" required>
+<input type="text" name="username" placeholder="Nome de usuário" required>
+<input type="text" name="cpf" placeholder="CPF" required>
+<input type="date" name="data_nascimento" required>
+<input type="text" name="grupo" placeholder="Grupo" required>
+<input type="text" name="cidade" placeholder="Cidade" required>
+<input type="text" name="estado" maxlength="2" placeholder="UF" required>
+<input type="email" name="email" placeholder="E-mail" required>
+<input type="text" name="telefone" placeholder="Telefone" required>
+
+<input type="password" name="senha" placeholder="Senha" required>
+<input type="password" name="senha2" placeholder="Confirme a senha" required>
+
 <button type="submit">Cadastrar</button>
+
 {% endblock %}
 
 {% block navForm %}Já faz parte da equipe? <a href="{% url 'formLogin' %}">Sign In</a>{% endblock %}

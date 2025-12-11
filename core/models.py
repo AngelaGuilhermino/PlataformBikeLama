@@ -1,5 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
+""" 
 class Ciclista(models.Model):
     cpf = models.CharField('CPF', primary_key = True)
     nome = models.CharField('Nome', max_length=255)
@@ -12,6 +14,25 @@ class Ciclista(models.Model):
 
     def __str__(self):
         return f"{self.nome} ({self.cpf})"
+
+"""
+class Ciclista(AbstractUser):
+    nome = models.CharField('Nome completo', max_length=255)
+    cpf = models.CharField('CPF', unique=True)
+    data_nascimento = models.DateField('Data de nascimento')
+    grupo = models.CharField('Grupo', max_length=200)
+    cidade = models.CharField('Cidade', max_length=100)
+    estado = models.CharField('Estado', max_length=2)
+    telefone = models.CharField('Telefone', max_length=14)
+
+    email = models.EmailField('E-mail', unique=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'cpf']
+
+    def __str__(self):
+        return f"{self.nome} ({self.email})"
+
 
 class TipoEvento(models.Model):
     descricao = models.CharField('Descrição', max_length=100)
