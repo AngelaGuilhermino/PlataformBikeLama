@@ -1,4 +1,6 @@
+{% load static %}
 <main>
+    {% if user.is_authenticated %}
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand mr-auto" href="#">BIKE LAMA</a>
@@ -33,6 +35,49 @@
                 </div>
             </div>
             <button type="button" class="btn btn-login"><a class="btn-login"
+                    href="{% url 'perfil' %}">Perfil</a></button>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
+                aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    {% else %}
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand mr-auto" href="#">BIKE LAMA</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %} me-3"
+                                href="{% url 'index' %}">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'passeios' %}active{% endif %} me-3"
+                                href="{% url 'formLogin' %}">Passeios ciclísticos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'calendario' %}active{% endif %} me-3"
+                                href="{% url 'formLogin' %}">Calendário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'eventos' %}active{% endif %} me-3"
+                                href="{% url 'formLogin' %}">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Equipe</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn btn-login"><a class="btn-login"
                     href="{% url 'formLogin' %}">Login</a></button>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
@@ -41,6 +86,7 @@
             </button>
         </div>
     </nav>
+    {% endif %}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

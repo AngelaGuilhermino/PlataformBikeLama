@@ -6,6 +6,12 @@ from .models import Evento, Ciclista, Inscricao
 from .forms import EventoForm, CiclistaForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+class StaffRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_staff
+
 
 def cadastro(request):
     if request.POST:
@@ -65,7 +71,7 @@ def formCadastro(request):
 def formLogin(request): 
     return render(request, 'formLogin.html')
 
-# CRUD generic views for Evento (now public — no staff/login checks)
+# Administrar Eventos
 class EventoListView(ListView):
     model = Evento
     template_name = 'evento_list.html'
@@ -76,24 +82,34 @@ class EventoDetailView(DetailView):
     template_name = 'evento_detail.html'
     context_object_name = 'evento'
 
-class EventoCreateView(CreateView):
+class EventoCreateView(LoginRequiredMixin, StaffRequiredMixin, CreateView):
     model = Evento
     form_class = EventoForm
     template_name = 'evento_form.html'
     success_url = reverse_lazy('evento_list')
 
-class EventoUpdateView(UpdateView):
+    def form_valid(self, form):
+        form.instance.imagem = self.request.FILES.get('imagem')
+        return super().form_valid(form)
+    
+
+class EventoUpdateView(LoginRequiredMixin, StaffRequiredMixin, UpdateView):
     model = Evento
     form_class = EventoForm
     template_name = 'evento_form.html'
     success_url = reverse_lazy('evento_list')
+
+    def form_valid(self, form):
+        if self.request.FILES.get('imagem'):
+            form.instance.imagem = self.request.FILES.get('imagem')
+        return super().form_valid(form)
 
 class EventoDeleteView(DeleteView):
     model = Evento
     template_name = 'evento_confirm_delete.html'
     success_url = reverse_lazy('evento_list')
 
-# Deletion views for Ciclista, Inscricao and User are public now (no staff checks)
+# Administrar usuários
 class CiclistaDeleteView(DeleteView):
     model = Ciclista
     template_name = 'ciclista_confirm_delete.html'
@@ -108,3 +124,25 @@ class UserDeleteView(DeleteView):
     model = User
     template_name = 'user_confirm_delete.html'
     success_url = reverse_lazy('evento_list')
+
+# Filtros referentes a página de passeios
+def passeios(request):
+    tipos = ["Trilha", "Viagem"]
+
+    eventos_passeio = Evento.objects.filter(
+        tipoEvento__descricao__in=tipos
+    )
+
+    return render(request, 'passeios.html', {
+        'eventos': eventos_passeio
+    })
+
+
+def eventos(request):
+    eventos_pagos = Evento.objects.filter(tipoEvento__descricao__icontains="Evento pago")
+
+    return render(request, 'passeios.html', {
+        'eventos': eventos_pagos
+    })
+
+

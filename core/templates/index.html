@@ -20,13 +20,19 @@
                     <p class="lead mb-4">
                         Acompanhe os eventos, participe dos treinos e viva o ciclismo com os Loucos por Aventura
                     </p>
-                    <button class="btn btn-light btn-lg px-4 me-2"><a href="{% url 'formCadastro' %}" class="btnCadastro">Tornar-se membro</a></button>
+                    {% if user.is_authenticated %}
+
+                    {% else %}
+                    <button class="btn btn-light btn-lg px-4 me-2"><a href="{% url 'formCadastro' %}"
+                            class="btnCadastro">Tornar-se membro</a></button>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SEÇÃO 2 -->
+
     <section class="section-portifolio mx-auto">
         <div class="container marketing">
             <div class="row">
@@ -36,7 +42,11 @@
                     <h2>Eventos</h2>
                     <p>A plataforma divulga eventos da equipe e de parceiros, como a Paróquia de Canguaretama. Além
                         disso, oferece um formulário de inscrição integrado para facilitar a participação..</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">Confira</a></p>
+                    {% if user.is_authenticated %}
+                    <p><a class="btn btn-secondary" href="{% url 'eventos' %}" role="button">Confira</a></p>
+                    {% else %}
+                    <p><a class="btn btn-secondary" href="{% url 'formLogin' %}" role="button">Confira</a></p>
+                    {% endif %}
                 </div>
                 <div class="col-lg-4">
                     <img class="rounded-circle" src="{% static 'img/calendario.png' %}" alt="Generic placeholder image"
@@ -44,15 +54,24 @@
                     <h2>Calendário</h2>
                     <p>Exibe o calendário anual da equipe com eventos, trilhas e viagens. Auxilia os usuários no
                         planejamento pessoal para participarem das principais atividades do ano.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">Confira</a></p>
+                    {% if user.is_authenticated %}
+                    <p><a class="btn btn-secondary" href="{% url 'calendario' %}" role="button">Confira</a></p>
+                    {% else %}
+                    <p><a class="btn btn-secondary" href="{% url 'formLogin' %}" role="button">Confira</a></p>
+                    {% endif %}
                 </div>
+
                 <div class="col-lg-4">
                     <img class="rounded-circle" src="{% static 'img/trilhas.png' %}" alt="Generic placeholder image"
                         width="140" height="140">
                     <h2>Passeios ciclísticos</h2>
                     <p>Divulga passeios, trilhas e treinos mensais. Os usuários podem confirmar ou cancelar presença,
                         facilitando o controle de participantes e o planejamento das atividades.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">Confira</a></p>
+                    {% if user.is_authenticated %}
+                    <p><a class="btn btn-secondary" href="{% url 'passeios' %}" role="button">Confira</a></p>
+                    {% else %}
+                    <p><a class="btn btn-secondary" href="{% url 'formLogin' %}" role="button">Confira</a></p>
+                    {% endif %}
                 </div>
             </div>
         </div>

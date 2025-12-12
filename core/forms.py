@@ -18,16 +18,34 @@ class CiclistaForm(forms.ModelForm):
             raise forms.ValidationError("As senhas não coincidem.")
 
         return cleaned_data
+    
+class EventoForm(forms.ModelForm):
+    class Meta:
+        model = Evento
+        fields = [
+            'nome_evento', 'valor_inscricao', 'data_evento',
+            'data_inicio_inscricao', 'data_fim_inscricao',
+            'distancia', 'tipoEvento', 'imagem'
+        ]
+        widgets = {
+            'nome_evento': forms.TextInput(attrs={'class': 'form-control'}),
+            'valor_inscricao': forms.NumberInput(attrs={'class': 'form-control'}),
+            'data_evento': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'data_inicio_inscricao': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'data_fim_inscricao': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'distancia': forms.NumberInput(attrs={'class': 'form-control'}),
+            'tipoEvento': forms.Select(attrs={'class': 'form-select'}),
+            'imagem': forms.FileInput(attrs={'class': 'form-control'}),
+        }
 
-class TipoEventoForm(forms.ModelForm): #adm
+class TipoEventoForm(forms.ModelForm):
     class Meta:
         model = TipoEvento
         fields = ['descricao']
-
-class EventoForm(forms.ModelForm): #adm
-    class Meta:
-        model = Evento
-        fields = ['nome_evento', 'valor_inscricao', 'data_evento', 'data_inicio_inscricao', 'data_fim_inscricao', 'distancia', 'tipoEvento']
+        widgets = {
+            'descricao': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+        
 
 class InscricaoForm(forms.ModelForm): 
     class Meta: 
