@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 ]
 AUTH_USER_MODEL = 'core.Ciclista'
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 MIDDLEWARE = [
     'core.middleware.AdminLoginNextMiddleware',

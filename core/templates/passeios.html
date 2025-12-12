@@ -8,76 +8,53 @@
 
 {% block conteudo %}
 <section class="hero-section">
-        <div class="container">
-        </div>
-    </section>
-    <section>
-        <div class="album py-5 bg-body-tertiary">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col d-flex">
-                        <div class="card shadow-sm h-100"> <img src="{% static 'img/imgSite10.jpeg' %}" alt="ECO PEDAL DE CANGUARETAMA"
-                                class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+    <div class="container">
+    </div>
+</section>
 
-                            <div class="card-body">
-                                <h4 class="card-text">DIAS 16 E 17 DE AGOSTO</h4>
-                                <p class="card-text">4° Desafio Entre Amigos, unindo a Equipe Bike Lama e a Onça Bike em
-                                    um percurso épico de 450 km, marcado por companheirismo, superação e belas
-                                    paisagens.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            <a href="{% url 'formInscricoes' %}">Participar</a>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            <a href="#">Ver</a>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col d-flex">
-                        <div class="card shadow-sm h-100"> <img src="{% static 'img/imgSite9.jpg' %}" alt="MART BIKE"
-                                class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
-                            <div class="card-body">
-                                <h4 class="card-text">DIA 24 DE AGOSTO</h4>
-                                <p class="card-text descMart">Pedal dominical da Equipe Bike Lama, percorrendo 85 km de
-                                    desafios, belas paisagens e muita aventura sobre duas rodas.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                                href="{% url 'formInscricoes' %}">Participar</a>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                                href="#">Ver</a>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col d-flex">
-                        <div class="card shadow-sm h-100"><img src="{% static 'img/imgSite7.jpg' %}" alt="CONCEIÇÃO BIKE"
-                                class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
-                            <div class="card-body">
-                                <h4 class="card-text">DIA 31 DE AGOSTO</h4>
-                                <p class="card-text">Pedal dominical da Equipe Bike Lama, percorrendo 45 km de desafios,
-                                    belas paisagens e muita aventura sobre duas rodas.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                                href="{% url 'formInscricoes' %}">Participar</a></button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            <a href="#">Ver</a>
-                                        </button>
-                                    </div>
+<section>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                {% for evento in eventos %}
+                <div class="col d-flex">
+                    <div class="card shadow-sm h-100">
+
+                        {% if evento.imagem %}
+                        <img src="{{ evento.imagem.url }}" alt="Imagem do evento" class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+                        {% else %}
+                        <img src="/static/img/placeholder.png" alt="Sem imagem" class="card-img-top" style="height: 225px; object-fit: cover; width: 100%;">
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h4 class="card-text">{{ evento.data_evento|date:"d/m/Y" }}</h4>
+
+                            <p class="card-text">
+                                {{ evento.nome_evento }}
+                            </p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'formInscricoes' %}">
+                                        Participar
+                                    </a>
+
+                                    <a class="btn btn-sm btn-outline-secondary"
+                                        href="{% url 'evento_detail' evento.pk %}">
+                                        Ver
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% empty %}
+                <p class="text-center">Nenhum passeio cadastrado.</p>
+                {% endfor %}
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

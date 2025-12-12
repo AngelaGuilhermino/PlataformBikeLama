@@ -49,6 +49,8 @@ class Evento(models.Model):
     distancia = models.FloatField('Distância')
     tipoEvento = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
 
+    imagem = models.ImageField(upload_to='eventos/', null=True, blank=True)
+
     def __str__(self):
         return self.nome_evento
 

@@ -1,5 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,10 +10,18 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
+
 <body>
     <h1>Página Perfil</h1>
 
     <p><a href="{% url 'index' %}">Index</a></p>
     <p><a href="{% url 'desconectar' %}">Desconectar</a></p>
+
+    {% if user.is_authenticated and user.is_staff %}
+    <p><a href="{% url 'evento_list' %}">Administrar Eventos</a></p>
+    {% else %}
+
+    {% endif %}
 </body>
+
 </html>
