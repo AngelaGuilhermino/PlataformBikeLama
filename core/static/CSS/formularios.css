@@ -14,6 +14,8 @@ html {
     min-height: 100vh;
     height: auto;
     padding: 40px 0;
+    display: flex;
+    gap: 40px;
 }
 
 /* Lado esquerdo */
@@ -21,7 +23,7 @@ html {
     flex: 1;
     background: linear-gradient(to bottom right, #0a7301, #2ecc71);
     color: white;
-    padding: 40px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +78,7 @@ html {
 .form {
     background: white;
     padding: 50px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
@@ -102,7 +104,7 @@ form {
     padding: 10px;
     margin-bottom: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 42px;
 }
 
@@ -137,6 +139,10 @@ form {
     color: #166011;
     text-decoration: none;
     font-weight: bold;
+}
+
+.full {
+    grid-column: span 2;
 }
 
 /* Logo */
