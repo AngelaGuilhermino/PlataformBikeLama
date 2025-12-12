@@ -120,7 +120,6 @@ form {
     cursor: pointer;
     font-weight: bold;
     height: 50px;
-    justify-content: center;
     grid-column: span 2;
 }
 
